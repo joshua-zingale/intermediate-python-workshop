@@ -11,6 +11,7 @@ Therefore, this workshop will touch on the following topics in Python that may h
 - Installing Packages
 - Organizing Packages
 - Type hinting/Documenting
+- Testing with PyTest
 
 Exploring these reveals that Python is much more feature-full than what a cursory look from an introductory course would let on. In addition to and beyond these topics, there is the world of Python metaprogramming, which can leverage metadata from the code, like class names, inheritance hierarchies, and more, to modify behavior in specialized ways. This is mostly useful for creating libraries.
 
@@ -68,3 +69,33 @@ on Mac/Linux or with
 ```
 
 on Windows.
+
+
+## Installing PyTest
+
+PyTest is a Python testing framework that is widely used by Python developers.
+It is considered by many to offer a much cleaner testing interface than what
+Python offers through its built-in testing framework, `unittest`.
+
+To install PyTest, use
+
+```bash
+pip install pytest
+```
+
+Then, you can run either
+
+```bash
+pytest
+```
+
+or
+
+```bash
+python -m pytest
+```
+
+to run the tests that you write.
+By default, any .py file that begins with `test_` is searched for tests,
+in which any function with `test_` as the start to its name is run as
+a test.
