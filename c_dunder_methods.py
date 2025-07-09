@@ -1,6 +1,6 @@
 def main():
-    right = Vec2(1,0)
-    up = Vec2(0,1)
+    right = Vec2(1, 0)
+    up = Vec2(0, 1)
     diagonal = up + right
 
     directions = [up, right, diagonal]
@@ -17,6 +17,7 @@ def main():
     for coordinate in up_three_over_four:
         print(coordinate)
 
+
 class Vec2:
     def __init__(self, x, y):
         # It is idiomatic to name "private" attributes with a leading underscore.
@@ -31,19 +32,16 @@ class Vec2:
     def __add__(self, other):
         # The `__add__` dunder (D[ouble] UNDER[score]) method overloads `+`
         # There are corresponding methods for all mathematical operators
-        return Vec2(
-            self._x + other._x,
-            self._y + other._y
-        )
-    
+        return Vec2(self._x + other._x, self._y + other._y)
+
     def __iter__(self):
         # `__iter__` makes instances of the calss iterable
         yield self._x
         yield self._y
-    
+
     def __repr__(self):
         return f"Vec2({self._x}, {self._y})"
-    
+
     def __str__(self):
         return f"[{self._x} {self._y}]"
 

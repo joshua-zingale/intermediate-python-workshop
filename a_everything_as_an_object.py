@@ -37,8 +37,9 @@ def main():
     def get_multiplier(factor):
         def multiply(value):
             return value * factor
+
         return multiply
-    
+
     mul_2 = get_multiplier(2)
     mul_3 = get_multiplier(3)
 

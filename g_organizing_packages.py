@@ -15,7 +15,6 @@ from namespace_package.package_2 import module_1
 
 
 def main():
-
     # Modules are themselves objects of type "module"
     print(type(namespace_package))
     print(type(package_1))
@@ -28,7 +27,6 @@ def main():
 
     # Module_1's `foo` is called via the re-import in package_2'sn__init__.py,
     print(package_2.module_1_foo())
-    
 
     # Other packages can be imported as normal
     import random

@@ -1,5 +1,6 @@
 import time
 
+
 def main():
     print(fib_recursive(25) == fib_iterative(25))
 
@@ -12,9 +13,13 @@ def timed_function(func):
         start = time.time()
         return_value = func(*args, **kwargs)
         duration = time.time() - start
-        print(f"Function '{func.__name__}' with arguments {args} and {kwargs} took {duration} seconds to run")
+        print(
+            f"Function '{func.__name__}' with arguments {args} and {kwargs} took {duration} seconds to run"
+        )
         return return_value
+
     return wrapper
+
 
 def fib_recursive(n):
     match n:
@@ -23,9 +28,10 @@ def fib_recursive(n):
         case 1:
             return 1
         case _:
-            return fib_recursive(n-1) + fib_recursive(n-2)
+            return fib_recursive(n - 1) + fib_recursive(n - 2)
 
-# We reassign the name "fib_recursive" to a wrapped version of the functoin     
+
+# We reassign the name "fib_recursive" to a wrapped version of the functoin
 fib_recursive = timed_function(fib_recursive)
 
 
@@ -37,8 +43,8 @@ def fib_iterative(n):
         return 0
     last = 0
     curr = 1
-    for _ in range(n-1):
-        curr, last = curr+last, curr
+    for _ in range(n - 1):
+        curr, last = curr + last, curr
     return curr
 
 
